@@ -1,0 +1,93 @@
+Question: Briefly explain the difference between Early and Late Binding with examples.
+
+Answer: 
+        Early Binding: 
+        --------------
+        This type of binding can be achieved at compile time. This is also called static binding and 
+        method overloading.
+        static methods calls and overloaded methods calls take place at compile time.
+        
+        Example:
+        -------
+        
+             public class Cycle {  // parent class
+	
+	             public static void run() {
+		         System.out.println("Cycle is running.");
+	               }
+
+            }
+            
+            public class Heroculas extends Cycle{ // child class
+     
+	                public static void run() {
+		            System.out.println("Heroculas is running.");
+	         }
+       }
+        
+              public class Test {
+         
+	           public static void main(String[] args) {
+				   Cycle cycle = new Cycle();
+				   Cycle heroculas = new Heroculas();
+				   cycle.run();
+				   heroculas.run();
+			}
+		}
+		
+		// output
+		//Cycle is running.
+        //Cycle is running.
+		
+		Expalanation: In the above example: The Cycle class and the Heroculas class where Heroculas child class 
+		extends the Cycle both have one static method run(). so when we are calling run() method from parent class
+		reference then only parent class method is being called.
+		why is this happening: because run() is a static method and static method can't be overridden. Therefore
+		binding of static method happends at compile time. 
+        
+        Late Binding:
+        ------------
+        This type of binding takes place at run time. And this is also called as method overriding and dynamic 
+        binding.
+        static methods don't participate in this type of binding.
+        
+        Example: 
+        -------
+        public class Cycle {  // parent class
+	
+	             public void run() {
+		         System.out.println("Cycle is running.");
+	               }
+
+            }
+            
+            public class Heroculas extends Cycle{ // child class
+     
+	                public void run() {
+		            System.out.println("Heroculas is running.");
+	         }
+       }
+        
+              public class Test {
+         
+	           public static void main(String[] args) {
+				   Cycle cycle = new Cycle();
+				   Cycle heroculas = new Heroculas();
+				   cycle.run();
+				   heroculas.run();
+			}
+		}
+		
+		// output
+		//Cycle is running.
+        //Heroculas is running.
+		
+		Explanation: In the above example: The Cycle class and the Heroculas class where Heroculas child class 
+		extends the Cycle class both have one non-static method run(). so when we are calling run() method from
+		parent class reference then child class overridden method is being called.
+		Why is this happening: run() is a non-static method overridden in the child class. So, At run time It is
+		being called.
+		
+		
+	
+        
