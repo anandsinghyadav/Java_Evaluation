@@ -1,0 +1,9 @@
+
+Question1: - Explain the meaning of the deadlock in multithreaded application, when it can occur in 
+             multithreading applications
+             
+Answer: When two and more threads are waiting for each other that situation is known as Deadlock.
+        For Deadlock synchronized keyword is responsible.
+        For Deadlock there is no any solution but there are several preventions.
+        
+        Example: Refer to Classes.             
